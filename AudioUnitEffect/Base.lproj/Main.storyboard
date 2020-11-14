@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ql7-AU-o0d">
+                                <rect key="frame" x="184" y="144" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="playAndRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iQo-bo-pe3"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="hPA-SH-0vj">
+                                <rect key="frame" x="16" y="206" width="382" height="368.5"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="100" id="yRS-rU-upd">
+                                        <rect key="frame" x="-2" y="0.0" width="386" height="18.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="dryWetMixChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Rb-ZT-UZk"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-20" maxValue="20" id="Tpj-89-g0K">
+                                        <rect key="frame" x="-2" y="58.5" width="386" height="18.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="gainChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y5D-ii-nKr"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.080000000000000002" minValue="0.0001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1J8-Dg-zFA">
+                                        <rect key="frame" x="-2" y="117" width="386" height="18.5"/>
+                                        <connections>
+                                            <action selector="minDelayTimeChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8eY-AE-acI"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.050000000000000003" minValue="0.0001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="H7a-bb-Lpy">
+                                        <rect key="frame" x="-2" y="175.5" width="386" height="18.5"/>
+                                        <connections>
+                                            <action selector="maxDelayTimeChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Zo-fW-gOC"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.001" maxValue="20" id="L8m-cy-J4F">
+                                        <rect key="frame" x="-2" y="234" width="386" height="18.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="decayTimeAt0HzChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGH-hs-P8z"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.001" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="32c-MC-cAf">
+                                        <rect key="frame" x="-2" y="292.5" width="386" height="18.5"/>
+                                        <connections>
+                                            <action selector="decayTimeAtNyquistChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NcD-3v-xrf"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="1" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="PFP-fZ-KaQ">
+                                        <rect key="frame" x="-2" y="351" width="386" height="18.5"/>
+                                        <connections>
+                                            <action selector="randomizeReflectionsChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TXr-mo-VbZ"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hPA-SH-0vj" firstAttribute="top" secondItem="Ql7-AU-o0d" secondAttribute="bottom" constant="32" id="KDB-4G-Uqt"/>
+                            <constraint firstItem="Ql7-AU-o0d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="T3I-wK-dju"/>
+                            <constraint firstItem="Ql7-AU-o0d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kNi-2d-pH5"/>
+                            <constraint firstItem="hPA-SH-0vj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xjV-ZP-49a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hPA-SH-0vj" secondAttribute="trailing" constant="16" id="zdl-UH-GNk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="70"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
